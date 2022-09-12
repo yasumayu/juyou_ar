@@ -1,0 +1,17 @@
+version:"3"
+
+service:
+ db-sqlite3:
+   build: ./mysqlite/
+   container_name: 'db-sqlite3'
+
+ python:
+   build:./python/
+   command: python3
+   container_name: 'python-django-opencv'
+   volume:
+   ports:
+   sepemds_on
+
+  
+   
