@@ -1,17 +1,24 @@
-version:"3"
+version: '3'
 
-service:
- db-sqlite3:
+service: 
+ #db
    build: ./mysqlite/
    container_name: 'db-sqlite3'
+   #対応付け
+   volume:
+     - ./db:/root/db
 
- python:
-   build:./python/
-   command: python3
+ python-django-opencv:
+   build: ./python/
+   command: python3 manage.py runserver 0.0.0.0:8000
    container_name: 'python-django-opencv'
    volume:
+     - ./code:/code
    ports:
-   sepemds_on
-
+     - 8000:8000
+   depends_on:
+     - db-sqlite3
+ 
+ 
   
    
