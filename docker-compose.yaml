@@ -1,25 +1,21 @@
 version: '3'
 
-service: 
- #db
-   build: ./mysqlite/
-   container_name: 'db-sqlite3'
-   #対応付け
-   volume:
-     - ./db:/root/db
-   tty: true
+services:
+  db-sqlite3:
+    build: ./mysqlite/
+    container_name: db-sqlite3
+    #対応付け
+    volumes:
+      - ./db:/root/db
+    tty: true
 
- python-django-opencv:
-   build: ./python/
-   command: python3 manage.py runserver 0.0.0.0:8000
-   container_name: 'python-django-opencv'
-   volume:
-     - ./code:/code
-   ports:
-     - 8000:8000
-   depends_on:
-     - db-sqlite3
- 
- 
-  
-   
+  python-django-opencv:
+    build: ./python/
+    command: python3 manage.py runserver 0.0.0.0:8000
+    container_name: 'python-django-opencv'
+    volumes:
+      - ./code:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - db-sqlite3   
