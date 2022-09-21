@@ -7,9 +7,10 @@ docker-compose run python-django-opencv  django-admin.py startproject composeexa
 docker-compose up -d
 
 3.起動されたコンテナの確認  
-docker-compose ps                       
-![ps](https://user-images.githubusercontent.com/84883605/191478555-62ed3f78-d462-4dd7-919a-51fa2422e075.png)
+docker-compose ps      
 
+![ps](https://user-images.githubusercontent.com/84883605/191478555-62ed3f78-d462-4dd7-919a-51fa2422e075.png)
+このように表示されていれば◯
 
 
 <その他>
