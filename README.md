@@ -13,7 +13,7 @@ docker-compose ps
 <その他>
 
 ・１つずつコンテナ起動  
-docker-compose run db-sqlite3
+docker-compose run db-sqlite3  
 docker-compose run python-django-opencv
 
 ・ファイル所有権の変更  
